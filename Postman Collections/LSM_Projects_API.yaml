@@ -1,0 +1,519 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: LSM Projects API
+  description: 'TODO: Add Description'
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: lsm-lb-1481639842.us-west-2.elb.amazonaws.com
+basePath: /
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /api/projects/:
+    post:
+      description: 'TODO: Add Description'
+      summary: Create Project
+      tags:
+      - Misc
+      operationId: Create Project
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreateProjectrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /api/projects/
+          headers:
+            Content-Type: application/json
+          body: >-
+            { "project_name": "Test Project Title",
+              "project_description": "Test Project Desc",
+              "name": [ "Faizan Shabbir","Hashim" ],
+              "userID":
+               [ "591d77e7495aa750c3e61588",
+                 "5922b5eafe99ad0010700fcc" ],
+              "ImgURL":
+               [ "https://lsm-images.s3.amazonaws.com/8e305ba4-9b78-4927-9fb3-987b44592bb3.jpg",
+                 "https://lsm-images.s3.amazonaws.com/8e305ba4-9b78-4927-9fb3-987b44592bb3.jpg" ],
+              "fullname": "Test Test",
+              "UserID": "5923e0eae169ce78cf103533" }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Create Project
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /api/projects/getAllProjects/591d77e7495aa750c3e61588:
+    get:
+      description: 'TODO: Add Description'
+      summary: Get All project from DB by User ID
+      tags:
+      - Misc
+      operationId: Get All project from DB by User ID
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /api/projects/getAllProjects/591d77e7495aa750c3e61588
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get All project from DB by User ID
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /api/projects/editproject/591d7906831fbbf4a1b8ee3b:
+    get:
+      description: 'TODO: Add Description'
+      summary: Get information of a single project to Edit
+      tags:
+      - Misc
+      operationId: Get information of a single project to Edit
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /api/projects/editproject/591d7906831fbbf4a1b8ee3b
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get information of a single project to Edit
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  //api/projects/getDetails/updateproject:
+    post:
+      description: 'TODO: Add Description'
+      summary: Update details of the Project
+      tags:
+      - Misc
+      operationId: Update details of the Project
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/UpdateDetailsOfTheProjectrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: //api/projects/getDetails/updateproject
+          headers:
+            Content-Type: application/json
+          body: >-
+            { "project_name": "Test Project Edited",
+              "project_description": "Test Project Edited Desc",
+              "ProjectID": "59240067d5ab098e30685f24",
+              "name":[ "Faizan Shabbir" ],
+              "userID":[ "591d77e7495aa750c3e61588"],
+              "ImgURL":[ "https://lsm-images.s3.amazonaws.com/8e305ba4-9b78-4927-9fb3-987b44592bb3.jpg"],
+              "UserID": "5923e0eae169ce78cf103533" }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Update details of the Project
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /api/projects/filter/591d77d2495aa750c3e61587/2017-05-16/2017-05-24:
+    get:
+      description: 'TODO: Add Description'
+      summary: Filter Project w.r.t User ID
+      tags:
+      - Misc
+      operationId: Filter Project w.r.t User ID
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /api/projects/filter/591d77d2495aa750c3e61587/2017-05-16/2017-05-24
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Filter Project w.r.t User ID
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  //api/projects/getuser/members:
+    get:
+      description: 'TODO: Add Description'
+      summary: Get All Member from the DataBase
+      tags:
+      - Misc
+      operationId: Get All Member from the DataBase
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: //api/projects/getuser/members
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get All Member from the DataBase
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /api/projects/createProject:
+    post:
+      description: 'TODO: Add Description'
+      summary: Create Project API for Mobile Team
+      tags:
+      - Misc
+      operationId: Create Project API for Mobile Team
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreateProjectApiForMobileTeamrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /api/projects/createProject
+          headers:
+            Content-Type: application/json
+          body: >-
+            { "project_name": "Test Project Title",
+              "project_description": "Test Project Desc",
+              "userID":[ "591d77e7495aa750c3e61588","5922b5eafe99ad0010700fcc" ],
+              "fullname": "Test Test",
+              "UserID": "5923e0eae169ce78cf103533" }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Create Project API for Mobile Team
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  //api/projects/getDetailsMobile/updateprojectMobile:
+    post:
+      description: 'TODO: Add Description'
+      summary: Update details of teh Project for Mobile Team
+      tags:
+      - Misc
+      operationId: Update details of teh Project for Mobile Team
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/UpdateDetailsOfTehProjectForMobileTeamrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: //api/projects/getDetailsMobile/updateprojectMobile
+          headers:
+            Content-Type: application/json
+          body: "{ \"project_name\": \"Test Project Edited\",\n  \"project_description\": \"Test Project Edited Desc\",\n  \"ProjectID\": \"59240067d5ab098e30685f24\",\n  \"userID\":[ \"591d77e7495aa750c3e61588\"],\n  \"UserID\": \"5923e0eae169ce78cf103533\" \n  }"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Update details of teh Project for Mobile Team
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /api/projects/test:
+    get:
+      description: 'TODO: Add Description'
+      summary: http://lsm-lb-1481639842.us-west-2.elb.amazonaws.com/api/projects/test
+      tags:
+      - Misc
+      operationId: http://lsm-lb-1481639842.us-west-2.elb.amazonaws.com/api/projects/test
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /api/projects/test
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: http://lsm-lb-1481639842.us-west-2.elb.amazonaws.com/api/projects/test
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  CreateProjectrequest:
+    title: Create ProjectRequest
+    type: object
+    properties:
+      project_name:
+        description: ''
+        type: string
+      project_description:
+        description: ''
+        type: string
+      name:
+        description: ''
+        type: array
+        items:
+          type: string
+      userID:
+        description: ''
+        type: array
+        items:
+          type: string
+      ImgURL:
+        description: ''
+        type: array
+        items:
+          type: string
+      fullname:
+        description: ''
+        type: string
+    required:
+    - project_name
+    - project_description
+    - name
+    - userID
+    - ImgURL
+    - fullname
+  UpdateDetailsOfTheProjectrequest:
+    title: Update details of the ProjectRequest
+    type: object
+    properties:
+      project_name:
+        description: ''
+        type: string
+      project_description:
+        description: ''
+        type: string
+      ProjectID:
+        description: ''
+        type: string
+      name:
+        description: ''
+        type: array
+        items:
+          type: string
+      userID:
+        description: ''
+        type: array
+        items:
+          type: string
+      ImgURL:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+    - project_name
+    - project_description
+    - ProjectID
+    - name
+    - userID
+    - ImgURL
+  CreateProjectApiForMobileTeamrequest:
+    title: Create Project API for Mobile TeamRequest
+    type: object
+    properties:
+      project_name:
+        description: ''
+        type: string
+      project_description:
+        description: ''
+        type: string
+      userID:
+        description: ''
+        type: array
+        items:
+          type: string
+      fullname:
+        description: ''
+        type: string
+    required:
+    - project_name
+    - project_description
+    - userID
+    - fullname
+  UpdateDetailsOfTehProjectForMobileTeamrequest:
+    title: Update details of teh Project for Mobile TeamRequest
+    type: object
+    properties:
+      project_name:
+        description: ''
+        type: string
+      project_description:
+        description: ''
+        type: string
+      ProjectID:
+        description: ''
+        type: string
+      userID:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+    - project_name
+    - project_description
+    - ProjectID
+    - userID
