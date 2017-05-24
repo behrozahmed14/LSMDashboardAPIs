@@ -7,7 +7,7 @@ info:
     name: MIT
     url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
 host: lsm-lb-1481639842.us-west-2.elb.amazonaws.com
-basePath: /
+basePath: /api/projects
 schemes:
 - http
 consumes:
@@ -15,7 +15,7 @@ consumes:
 produces:
 - application/json
 paths:
-  /api/projects/:
+  /:
     post:
       description: 'TODO: Add Description'
       summary: Create Project
@@ -43,7 +43,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /api/projects/
+          uri: /
           headers:
             Content-Type: application/json
           body: >-
@@ -74,7 +74,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /api/projects/getAllProjects/591d77e7495aa750c3e61588:
+  /getAllProjects/591d77e7495aa750c3e61588:
     get:
       description: 'TODO: Add Description'
       summary: Get All project from DB by User ID
@@ -91,7 +91,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /api/projects/getAllProjects/591d77e7495aa750c3e61588
+          uri: /getAllProjects/591d77e7495aa750c3e61588
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -108,7 +108,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /api/projects/editproject/591d7906831fbbf4a1b8ee3b:
+  /editproject/591d7906831fbbf4a1b8ee3b:
     get:
       description: 'TODO: Add Description'
       summary: Get information of a single project to Edit
@@ -125,7 +125,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /api/projects/editproject/591d7906831fbbf4a1b8ee3b
+          uri: /editproject/591d7906831fbbf4a1b8ee3b
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -142,7 +142,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  //api/projects/getDetails/updateproject:
+  /getDetails/updateproject:
     post:
       description: 'TODO: Add Description'
       summary: Update details of the Project
@@ -170,7 +170,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: //api/projects/getDetails/updateproject
+          uri: /getDetails/updateproject
           headers:
             Content-Type: application/json
           body: >-
@@ -197,7 +197,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /api/projects/filter/591d77d2495aa750c3e61587/2017-05-16/2017-05-24:
+  /filter/591d77d2495aa750c3e61587/2017-05-16/2017-05-24:
     get:
       description: 'TODO: Add Description'
       summary: Filter Project w.r.t User ID
@@ -214,7 +214,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /api/projects/filter/591d77d2495aa750c3e61587/2017-05-16/2017-05-24
+          uri: /filter/591d77d2495aa750c3e61587/2017-05-16/2017-05-24
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -231,7 +231,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  //api/projects/getuser/members:
+  /getuser/members:
     get:
       description: 'TODO: Add Description'
       summary: Get All Member from the DataBase
@@ -248,7 +248,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: //api/projects/getuser/members
+          uri: /getuser/members
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -265,7 +265,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /api/projects/createProject:
+  /createProject:
     post:
       description: 'TODO: Add Description'
       summary: Create Project API for Mobile Team
@@ -293,7 +293,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /api/projects/createProject
+          uri: /createProject
           headers:
             Content-Type: application/json
           body: >-
@@ -318,7 +318,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  //api/projects/getDetailsMobile/updateprojectMobile:
+  /getDetailsMobile/updateprojectMobile:
     post:
       description: 'TODO: Add Description'
       summary: Update details of teh Project for Mobile Team
@@ -346,7 +346,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: //api/projects/getDetailsMobile/updateprojectMobile
+          uri: /getDetailsMobile/updateprojectMobile
           headers:
             Content-Type: application/json
           body: "{ \"project_name\": \"Test Project Edited\",\n  \"project_description\": \"Test Project Edited Desc\",\n  \"ProjectID\": \"59240067d5ab098e30685f24\",\n  \"userID\":[ \"591d77e7495aa750c3e61588\"],\n  \"UserID\": \"5923e0eae169ce78cf103533\" \n  }"
@@ -366,7 +366,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /api/projects/test:
+  /test:
     get:
       description: 'TODO: Add Description'
       summary: http://lsm-lb-1481639842.us-west-2.elb.amazonaws.com/api/projects/test
@@ -383,7 +383,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /api/projects/test
+          uri: /test
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
